@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Placar Interativo de Jogos</title>
+        <link rel="stylesheet" href="src/css/style.css">
+        <script src="src/js/script.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>🏆 Placar Interativo</h1>
+  </header>
+
+  <main>
+    <section id="config">
+      <h2>Configuração das Equipes</h2>
+      <form id="teamForm">
+        <div class="form-group">
+          <label for="teamA">Equipe A:</label>
+          <input type="text" id="teamA" placeholder="Nome da equipe A" required>
+        </div>
+        <div class="form-group">
+          <label for="teamB">Equipe B:</label>
+          <input type="text" id="teamB" placeholder="Nome da equipe B" required>
+        </div>
+        <button type="submit">Iniciar Partida</button>
+      </form>
+    </section>
+
+    <section id="scoreboard" class="hidden">
+      <div class="teams">
+        <div class="team" id="teamABox">
+          <h3 id="teamAName">Equipe A</h3>
+          <p class="score" id="scoreA">0</p>
+          <div class="buttons">
+            <button onclick="updateScore('A', 1)">+1</button>
+            <button onclick="updateScore('A', 2)">+2</button>
+            <button onclick="updateScore('A', -1)">-1</button>
+          </div>
+        </div>
+
+        <div class="team" id="teamBBox">
+          <h3 id="teamBName">Equipe B</h3>
+          <p class="score" id="scoreB">0</p>
+          <div class="buttons">
+            <button onclick="updateScore('B', 1)">+1</button>
+            <button onclick="updateScore('B', 2)">+2</button>
+            <button onclick="updateScore('B', -1)">-1</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="resetBtn">🔄 Reiniciar Placar</button>
+      </div>
+
+      <div id="history">
+        <h2>Histórico de Eventos</h2>
+        <ul id="eventList"></ul>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
